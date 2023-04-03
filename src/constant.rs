@@ -1,0 +1,10 @@
+
+pub static PLACEHOLDER_URL: &str = r#"*URL_STRING*"#;
+pub static PLACEHOLDER_METHOD: &str = r#"*METHOD_STRING*"#;
+pub static PLACEHOLDER_HEADER: &str = r#"*HEADERS_STRING*"#;
+pub static PLACEHOLDER_BODY: &str = r#"*BODY_STRING*"#;
+
+pub static HANDLER_STATUS_OK: u32 = 20;
+pub static HANDLER_STATUS_PARSE_FAILED: u32 = 30;
+pub static HANDLER_STATUS_REQUEST_NOT_OK: u32 = 1000;
+pub static HANDLER_STATUS_ERROR_UNCLASSIFIED: u32 = 40;
