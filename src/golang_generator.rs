@@ -58,8 +58,7 @@ static GOLANG_TEMPLATE_GET: &str = r#"
   req, err := http.NewRequest(method, url, nil)
   "#;
 
-static GOLANG_TEMPLATE: &str = r#"
-package main
+static GOLANG_TEMPLATE: &str = r#"package main
 
 import (
   "fmt"

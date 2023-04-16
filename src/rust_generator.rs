@@ -51,8 +51,7 @@ static RUST_TEMPLATE_HEADER: &str = r#".headers({
             let mut headers = http::header::HeaderMap::new();*HEADERS_STRING*
             headers})"#;
 
-static RUST_TEMPLATE: &str = r#"
-use reqwest;
+static RUST_TEMPLATE: &str = r#"use reqwest;
 
 #[async_std::main]
 async fn main()  {
