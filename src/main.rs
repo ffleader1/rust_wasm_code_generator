@@ -5,6 +5,7 @@ mod constant;
 mod python_generator;
 mod nodejs_generator;
 mod curl_handler;
+mod rust_generator;
 
 use async_std::task;
 
@@ -17,4 +18,5 @@ fn main() {
     println!("{}", ch.get_parsing_err());
     println!("{}", ch.get_response());
     println!("{}", ch.get_golang());
+    println!("{}", ch.get_rust())
 }

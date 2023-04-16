@@ -978,7 +978,7 @@ dependencies = [
 
 [[package]]
 name = "rust_wasm_code_generator"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "async-std",
  "console_error_panic_hook",

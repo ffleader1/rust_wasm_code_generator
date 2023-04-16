@@ -4,6 +4,7 @@ mod python_generator;
 mod constant;
 mod curl_handler;
 mod nodejs_generator;
+mod rust_generator;
 
 use curl_handler::CurlHandler;
 use wasm_bindgen::prelude::*;
@@ -45,5 +46,6 @@ impl WasmCurlHandlerObj {
     pub fn get_nodejs(&self) -> String {
         self.0.get_nodejs()
     }
+    pub fn get_rust(&self) -> String {self.0.get_rust()}
 }
 

@@ -5,6 +5,7 @@ use serde_json::{Result, Value};
 use crate::golang_generator::GolangGenerator;
 use crate::python_generator::PythonGenerator;
 use crate::nodejs_generator::NodeJSGenerator;
+use crate::rust_generator::RustGenerator;
 use crate::constant::*;
 use reqwest::StatusCode;
 
@@ -20,6 +21,7 @@ pub struct CurlHandler {
     golang_code: String,
     python_code: String,
     nodejs_code: String,
+    rust_code: String,
 }
 /*
     status code:
@@ -39,6 +41,7 @@ impl CurlHandler {
             golang_code: "".to_string(),
             python_code: "".to_string(),
             nodejs_code: "".to_string(),
+            rust_code: "".to_string(),
         }
     }
     pub async fn update_curl(&mut self, curl: &str, ignore_request: bool) {
@@ -51,9 +54,11 @@ impl CurlHandler {
                 let go_gen = GolangGenerator::new_from_reqwest(&req);
                 let python_gen = PythonGenerator::new_from_reqwest(&req);
                 let nodejs_gen = NodeJSGenerator::new_from_reqwest(&req);
+                let rust_gen = RustGenerator::new_from_reqwest(&req);
                 self.golang_code = go_gen.content;
                 self.python_code = python_gen.content;
                 self.nodejs_code = nodejs_gen.content;
+                self.rust_code = rust_gen.content;
                 if ignore_request {
                     return;
                 }
@@ -113,6 +118,7 @@ impl CurlHandler {
                 self.golang_code = "".to_string();
                 self.python_code = "".to_string();
                 self.nodejs_code = "".to_string();
+                self.rust_code = "".to_string();
             }
         };
 
@@ -138,4 +144,5 @@ impl CurlHandler {
     pub fn get_nodejs(&self) -> String {
         self.nodejs_code.clone()
     }
+    pub fn get_rust(&self) -> String {self.rust_code.clone()}
 }
